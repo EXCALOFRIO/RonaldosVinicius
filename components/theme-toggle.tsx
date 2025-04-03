@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
-import { Button } from "@/components/components/ui/button"; // Verifica la ruta
+import { Button } from "@/components/custom-ui/Button"; // Verifica la ruta
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -14,7 +14,7 @@ export default function ThemeToggle() {
   }, []);
 
   // --- Configuración de Tamaño ---
-  const iconSizeClass = "h-[100%] w-[100%]";
+  const iconSizeClass = "h-[60%] w-[60%]";
   // Define el tamaño del botón aquí (ej: 'w-10 h-10', 'w-12 h-12', 'w-14 h-14')
   const buttonSizeClass = "w-12 h-12";
   // Define qué porcentaje del botón debe ocupar el icono
