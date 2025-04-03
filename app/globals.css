@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* --- COLOR THEME DEFINITIONS (HSL) --- */
+  /* Using a slightly refined blue palette */
+
+  /* Light Theme */
+  :root {
+    --background: 210 40% 98%; /* Off-white */
+    --foreground: 215 25% 25%; /* Dark grayish blue */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 215 25% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 25%;
+
+    --primary: 217 91% 60%; /* Strong Blue */
+    --primary-foreground: 210 40% 98%; /* White */
+
+    --secondary: 210 40% 92%; /* Light Grayish Blue */
+    --secondary-foreground: 216 34% 40%; /* Medium Blue */
+
+    --muted: 210 40% 94%; /* Slightly darker gray blue */
+    --muted-foreground: 215 20% 55%; /* Gray */
+
+    --accent: 210 40% 90%; /* Even lighter blue */
+    --accent-foreground: 217 50% 35%; /* Darker blue for accent text */
+
+    --destructive: 0 84% 60%; /* Red */
+    --destructive-foreground: 0 0% 98%; /* White */
+
+    --border: 214 32% 91%; /* Light Gray border */
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%; /* Primary blue for ring */
+
+    --chart-1: 217 91% 60%; /* Primary */
+    --chart-2: 198 80% 55%; /* Cyan-Blue */
+    --chart-3: 240 70% 65%; /* Purple-Blue */
+    --chart-4: 170 60% 50%; /* Teal */
+    --chart-5: 210 60% 70%; /* Lighter Blue */
+
+    --radius: 0.7rem; /* Slightly adjusted radius */
+  }
+
+  /* Dark Theme */
+  .dark {
+    --background: 220 20% 7%; /* Very dark blue */
+    --foreground: 210 40% 96%; /* Light Gray */
+
+    --card: 220 18% 11%; /* Darker blue-gray */
+    --card-foreground: 210 40% 96%;
+    --popover: 220 20% 9%; /* Slightly darker popover */
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 217 91% 65%; /* Brighter Blue */
+    --primary-foreground: 220 20% 10%; /* Dark text on primary */
+
+    --secondary: 217 30% 18%; /* Dark Blue */
+    --secondary-foreground: 210 40% 85%; /* Lighter gray */
+
+    --muted: 217 30% 18%; /* Same as secondary */
+    --muted-foreground: 215 20% 65%; /* Medium Gray */
+
+    --accent: 217 30% 25%; /* Slightly lighter dark blue */
+    --accent-foreground: 210 40% 92%; /* Light accent text */
+
+    --destructive: 0 70% 55%; /* Brighter Red in dark */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 30% 22%; /* Subtle dark border */
+    --input: 217 30% 24%; /* Slightly lighter input background */
+    --ring: 217 91% 70%; /* Brighter ring */
+
+     /* Chart Colors (Adjusted for Dark) */
+    --chart-1: 217 91% 65%; /* Primary */
+    --chart-2: 198 75% 60%; /* Cyan-Blue */
+    --chart-3: 240 65% 70%; /* Purple-Blue */
+    --chart-4: 170 55% 55%; /* Teal */
+    --chart-5: 210 55% 75%; /* Lighter Blue */
+
+    /* Radius inherited */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border; /* Apply border color variable globally */
+  }
+  body {
+    /* Base background/text applied in layout.tsx */
+    font-size: 17px; /* Slightly adjusted base font size */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Default heading styles (can be overridden by utility classes) */
+  h1 { @apply text-2xl font-bold tracking-tight; }
+  h2 { @apply text-3xl font-bold tracking-tight; }
+  h3 { @apply text-2xl font-semibold tracking-tight; }
+  h4 { @apply text-xl font-semibold tracking-tight; }
+  /* Removed default margins, apply them contextually */
+
+  /* Improve general readability */
+  p, span, div, li, td, th {
+    /* line-height: 1.65; */ /* Use default line-height from body or Tailwind */
+  }
+
+  /* Base styles for form elements - INCREASED PADDING/HEIGHT */
+  input,
+  select,
+  textarea,
+  button {
+     /* font-size will inherit (17px) */
+    /* Use Shadcn size variants or specific classes for sizing */
+  }
+
+  /* Specific Shadcn adjustments */
+  .label, label { /* Target both Shadcn and native label */
+    @apply font-medium text-base mb-1.5 block; /* Slightly smaller, standard weight */
+  }
+
+  /* Mobile optimisations */
+  @media (max-width: 640px) {
+    body {
+      font-size: 16px; /* Maintain readable size */
+    }
+
+    /* Adjust heading sizes for mobile */
+    h1 { @apply text-3xl; }
+    h2 { @apply text-2xl; }
+    h3 { @apply text-xl; }
+    h4 { @apply text-lg; }
+
+    /* Ensure recharts labels/text are reasonably sized */
+    .recharts-wrapper .recharts-text {
+       font-size: 0.8rem; /* Adjust tick/label size */
+    }
+     .recharts-tooltip-wrapper {
+       font-size: 0.9rem; /* Adjust tooltip size */
+     }
+
+     /* Ensure charts don't overflow weirdly, but allow scrolling if needed */
+    .recharts-responsive-container {
+       overflow: hidden; /* Prevent container itself from causing scrollbars */
+    }
+  }
+}
+
+/* Add simple spin animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}

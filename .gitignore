@@ -1,0 +1,128 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                     Next.js                            #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# Carpeta de compilación de Next.js (desarrollo y producción)
+.next/
+
+# Carpeta de exportación estática de Next.js (si usas `next export`)
+out/
+
+# Archivos de construcción de Next.js (versiones anteriores o configuraciones específicas)
+build/
+dist/
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                Node.js / Package Managers              #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# Dependencias (la carpeta más importante a ignorar)
+node_modules/
+
+# Archivos de log de npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Archivos de bloqueo (lock files) - Generalmente **DEBES** comitearlos
+# para asegurar instalaciones consistentes, pero si tienes una política
+# específica para no hacerlo, descomenta la línea correspondiente.
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Cache del gestor de paquetes (si se genera localmente)
+.npm
+.yarn/cache
+.yarn/install-state.gz
+.pnp.*
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                Variables de Entorno                    #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# Ignora todos los archivos .env excepto las plantillas (.env.example)
+# ¡NUNCA comitees claves secretas o credenciales!
+.env
+.env*.local
+.env.development
+.env.production
+# .env.test # Si usas uno específico para tests
+
+# No ignores los archivos de ejemplo (buenas prácticas)
+!.env.example
+!.env.*.example
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                 Sistema Operativo                      #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archivos de miniaturas de Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Archivos temporales de macOS/Linux
+._*
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                 IDE / Editores                         #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-workspace
+
+# JetBrains / IDEA
+.idea/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                 Logs y Archivos Temporales             #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# Logs genéricos
+logs/
+*.log
+
+# Archivos temporales
+*.tmp
+*.cache
+*.bak
+*.swp
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                 Testing / Coverage                     #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# Reportes de cobertura de código (Jest, Cypress, nyc, etc.)
+coverage/
+.nyc_output/
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#           Otros (Menos comunes / Específicos)          #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# Archivos comprimidos generados localmente
+*.zip
+*.gz
+*.tar
+
+# ESLint cache
+.eslintcache
+
+# Archivos específicos de TypeScript build info (si aplica)
+*.tsbuildinfo
+
+# Tailwind CSS - Nota: Los archivos de configuración como
+# tailwind.config.js y postcss.config.js SÍ deben ser comiteados.
+# El CSS generado usualmente está dentro de .next/ y ya está ignorado.
+# No se necesitan entradas específicas para Tailwind en la mayoría de los casos.
