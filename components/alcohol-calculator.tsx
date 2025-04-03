@@ -15,7 +15,7 @@ import {
   Trash2,
   Beer,
   Wine,
-  Droplet, // Changed spirits icon
+  GlassWater, // Changed spirits icon
   Clock,
   User,
   BarChartBig as ChartIcon, // Slightly different chart icon
@@ -86,7 +86,7 @@ interface PersonalFactors {
 const DRINK_DEFAULTS: Record< DrinkType, { amount: number; alcoholPercentage: number; duration: DrinkDurationKey; name: string; icon: React.ElementType; }> = {
   beer: { amount: 330, alcoholPercentage: 5, duration: "normal", name: "Cerveza", icon: Beer },
   wine: { amount: 150, alcoholPercentage: 12, duration: "normal", name: "Vino", icon: Wine },
-  spirits: { amount: 50, alcoholPercentage: 40, duration: "short", name: "Cubata", icon: Droplet }, // Changed default duration and name slightly
+  spirits: { amount: 50, alcoholPercentage: 40, duration: "short", name: "Cubata", icon: GlassWater }, // Changed default duration and name slightly
 }
 const DURATION_OPTIONS: Record<DrinkDurationKey, { minutes: number; name: string }> = {
   hidalgo: { minutes: 0.1, name: "Hidalgo (0 min)" },
@@ -878,7 +878,7 @@ export default function AlcoholCalculator() {
           {/* --- Placeholder when no drinks --- */}
           {drinks.length === 0 ? (
             <div className="text-center py-12 md:py-20 text-muted-foreground border-2 border-dashed border-border/50 rounded-xl bg-muted/20 dark:bg-muted/10">
-              <Droplet className="h-16 w-16 md:h-20 md:w-20 mx-auto mb-5 opacity-30" />
+              <GlassWater className="h-16 w-16 md:h-20 md:w-20 mx-auto mb-5 opacity-30" />
               <p className="mb-6 text-lg md:text-xl">Aún no has añadido ninguna bebida.</p>
               {/* Larger button */}
               <Button onClick={addDrink} size="lg" className="h-12 px-8 text-base font-semibold">
@@ -890,7 +890,7 @@ export default function AlcoholCalculator() {
             {/* --- List of Drinks --- */}
             {drinks.map((drink, index) => {
               // Get details for the current drink
-              const DrinkIcon = DRINK_DEFAULTS[drink.type]?.icon || Droplet
+              const DrinkIcon = DRINK_DEFAULTS[drink.type]?.icon || GlassWater
               const durationMinutes = getDurationMinutes(drink)
                // Ensure startTime is a number before formatting
               const startTimeNum = typeof drink.startTime === 'number' ? drink.startTime : 0;
