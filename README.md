@@ -1,5 +1,6 @@
 # Calculadora de Tasa de Alcoholemia Estimada
 
+
 Esta es una aplicación web interactiva construida con React, Next.js (`"use client"`), TypeScript y `shadcn/ui` para estimar la Concentración de Alcohol en Sangre (BAC) o Aire Espirado (BrAC) a lo largo del tiempo. La estimación se basa en factores personales (sexo, peso) y las bebidas consumidas (tipo, cantidad, graduación, tiempo de consumo, tiempo de inicio/espera).
 
 Utiliza `Recharts` para visualizar la curva de alcoholemia estimada y proporciona métricas clave como el pico máximo, el tiempo por encima del límite legal y el tiempo estimado para volver a ~0.00.
